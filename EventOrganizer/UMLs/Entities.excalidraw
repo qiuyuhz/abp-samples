@@ -1,0 +1,2034 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "szP4BwBRSx-IR8rfRBVwX",
+      "type": "text",
+      "x": 510.8573303222656,
+      "y": 492.00018310546875,
+      "width": 341.8962955474856,
+      "height": 208.5712890625,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 827360649,
+      "version": 223,
+      "versionNonce": 2136062025,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104517809,
+      "link": null,
+      "locked": false,
+      "text": "public class EventCreationDto\n    {\n        [Required]\n        [StringLength(100)]\n        public string Title { get; set; }\n\n        [Required]\n        [StringLength(2000)]\n        public string Description { get; set; }\n\n        public bool IsFree { get; set; }\n\n        public DateTime StartTime { get; set; }\n    }",
+      "fontSize": 12.414957682291677,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 205.99999999999986,
+      "containerId": null,
+      "originalText": "public class EventCreationDto\n    {\n        [Required]\n        [StringLength(100)]\n        public string Title { get; set; }\n\n        [Required]\n        [StringLength(2000)]\n        public string Description { get; set; }\n\n        public bool IsFree { get; set; }\n\n        public DateTime StartTime { get; set; }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "bC4qPbRQ1tPAsxA-j90yg",
+      "type": "text",
+      "x": 468.38436794281006,
+      "y": 779.3976674804687,
+      "width": 510.80473841324937,
+      "height": 269.1203527184309,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 168058025,
+      "version": 432,
+      "versionNonce": 1620414183,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "aHz0hvlCesAWINYRHMPAo",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1735104568571,
+      "link": null,
+      "locked": false,
+      "text": "public class AppUser : FullAuditedAggregateRoot<Guid>, IUser\n    {\n        #region Base properties\n        public virtual Guid? TenantId { get; private set; }\n        public virtual string UserName { get; private set; }\n        public virtual string Name { get; private set; }\n        public virtual string Surname { get; private set; }\n        public bool IsActive { get; private set; }\n        public virtual string Email { get; private set; }\n        public virtual bool EmailConfirmed { get; private set; }\n        public virtual string PhoneNumber { get; private set; }\n        public virtual bool PhoneNumberConfirmed { get; private set; }\n\n        private AppUser()\n        {\n            \n        }\n    }",
+      "fontSize": 12.459275588816253,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 265.9999999999999,
+      "containerId": null,
+      "originalText": "public class AppUser : FullAuditedAggregateRoot<Guid>, IUser\n    {\n        #region Base properties\n        public virtual Guid? TenantId { get; private set; }\n        public virtual string UserName { get; private set; }\n        public virtual string Name { get; private set; }\n        public virtual string Surname { get; private set; }\n        public bool IsActive { get; private set; }\n        public virtual string Email { get; private set; }\n        public virtual bool EmailConfirmed { get; private set; }\n        public virtual string PhoneNumber { get; private set; }\n        public virtual bool PhoneNumberConfirmed { get; private set; }\n\n        private AppUser()\n        {\n            \n        }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "9VnA8qmVEiVKiKKuP34iT",
+      "type": "text",
+      "x": 38.571746826171875,
+      "y": 683.457965234375,
+      "width": 415.665015220642,
+      "height": 170.25639023437492,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 710754343,
+      "version": 364,
+      "versionNonce": 392223401,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "6vzlzyqFCvRRSwyhR73tQ",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1735104535983,
+      "link": null,
+      "locked": false,
+      "text": "public class Event : FullAuditedAggregateRoot<Guid>\n    {\n        public string Title { get; set; }\n        public string Description { get; set; }\n        public bool IsFree { get; set; }\n        public DateTime StartTime { get; set; }\n        public ICollection<EventAttendee> Attendees { get; set; }\n\n        public Event()\n        {\n            Attendees = new List<EventAttendee>();\n        }\n    }",
+      "fontSize": 10.913871168870198,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 166.99999999999983,
+      "containerId": null,
+      "originalText": "public class Event : FullAuditedAggregateRoot<Guid>\n    {\n        public string Title { get; set; }\n        public string Description { get; set; }\n        public bool IsFree { get; set; }\n        public DateTime StartTime { get; set; }\n        public ICollection<EventAttendee> Attendees { get; set; }\n\n        public Event()\n        {\n            Attendees = new List<EventAttendee>();\n        }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "2pgcZH_B-BTiw4rCinqQd",
+      "type": "text",
+      "x": -37.71332073211653,
+      "y": 948.5714721679688,
+      "width": 379.464030265808,
+      "height": 77.71423339843749,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 209987143,
+      "version": 93,
+      "versionNonce": 20818407,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "id": "6vzlzyqFCvRRSwyhR73tQ",
+          "type": "arrow"
+        },
+        {
+          "id": "aHz0hvlCesAWINYRHMPAo",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1735104539633,
+      "link": null,
+      "locked": false,
+      "text": "public class EventAttendee : IHasCreationTime\n    {\n        public Guid UserId { get; set; }\n        public DateTime CreationTime { get; set; }\n    }",
+      "fontSize": 12.952372233072916,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 75,
+      "containerId": null,
+      "originalText": "public class EventAttendee : IHasCreationTime\n    {\n        public Guid UserId { get; set; }\n        public DateTime CreationTime { get; set; }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "6vzlzyqFCvRRSwyhR73tQ",
+      "type": "arrow",
+      "x": 176.30332655424004,
+      "y": 866.2857666015625,
+      "width": 21.482594225710187,
+      "height": 75.9998779296875,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 311258377,
+      "version": 246,
+      "versionNonce": 1168098599,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104539734,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -21.482594225710187,
+          75.9998779296875
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "9VnA8qmVEiVKiKKuP34iT",
+        "focus": 0.1825475236440585,
+        "gap": 12.5714111328125
+      },
+      "endBinding": {
+        "elementId": "2pgcZH_B-BTiw4rCinqQd",
+        "focus": -0.04961420423316909,
+        "gap": 6.28582763671875
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "iB4-9KnzJ8Z8OAVN8gw-c",
+      "type": "text",
+      "x": -15.99975585937483,
+      "y": 1130.547094970703,
+      "width": 581.3412935489619,
+      "height": 238.2172091385686,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1273895239,
+      "version": 307,
+      "versionNonce": 594317545,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104750307,
+      "link": null,
+      "locked": false,
+      "text": "[ConnectionStringName(\"Default\")]\n    public class EventOrganizerMongoDbContext : AbpMongoDbContext\n    {\n        public IMongoCollection<AppUser> Users => Collection<AppUser>();        \n        public IMongoCollection<Event> Events => Collection<Event>();\n        protected override void CreateModel(IMongoModelBuilder modelBuilder)\n        {\n            base.CreateModel(modelBuilder);\n            modelBuilder.Entity<AppUser>(b =>\n            {\n                /* Sharing the same \"AbpUsers\" collection\n                 * with the Identity module's IdentityUser class. */\n                b.CollectionName = \"AbpUsers\";\n            });\n        }\n    }",
+      "fontSize": 12.40714630930045,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 234.99999999999997,
+      "containerId": null,
+      "originalText": "[ConnectionStringName(\"Default\")]\n    public class EventOrganizerMongoDbContext : AbpMongoDbContext\n    {\n        public IMongoCollection<AppUser> Users => Collection<AppUser>();        \n        public IMongoCollection<Event> Events => Collection<Event>();\n        protected override void CreateModel(IMongoModelBuilder modelBuilder)\n        {\n            base.CreateModel(modelBuilder);\n            modelBuilder.Entity<AppUser>(b =>\n            {\n                /* Sharing the same \"AbpUsers\" collection\n                 * with the Identity module's IdentityUser class. */\n                b.CollectionName = \"AbpUsers\";\n            });\n        }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "aHz0hvlCesAWINYRHMPAo",
+      "type": "arrow",
+      "x": 355.2857666015625,
+      "y": 992.3987151953588,
+      "width": 100.0001220703125,
+      "height": 81.20144306955422,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": {
+        "type": 2
+      },
+      "seed": 1323726983,
+      "version": 259,
+      "versionNonce": 1743667495,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104568572,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          100.0001220703125,
+          -81.20144306955422
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "2pgcZH_B-BTiw4rCinqQd",
+        "focus": 0.8818809242467313,
+        "gap": 13.535057067871037
+      },
+      "endBinding": {
+        "elementId": "bC4qPbRQ1tPAsxA-j90yg",
+        "focus": 0.6456694090340261,
+        "gap": 13.098479270935059
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "M4vbr9tcJ4RVER3IS-e5C",
+      "type": "text",
+      "x": 45.14276123046881,
+      "y": 346.03056264804286,
+      "width": 333.49554443359375,
+      "height": 116.25512765957446,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1093836905,
+      "version": 169,
+      "versionNonce": 1728807689,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104788357,
+      "link": null,
+      "locked": false,
+      "text": "    public class EventDto : EntityDto<Guid>\n    {\n        public string Title { get; set; }\n        public string Description { get; set; }\n        public bool IsFree { get; set; }\n        public DateTime StartTime { get; set; }\n        public int AttendeesCount { get; set; }\n    }",
+      "fontSize": 12.109909131205676,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 112.99999999999997,
+      "containerId": null,
+      "originalText": "    public class EventDto : EntityDto<Guid>\n    {\n        public string Title { get; set; }\n        public string Description { get; set; }\n        public bool IsFree { get; set; }\n        public DateTime StartTime { get; set; }\n        public int AttendeesCount { get; set; }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "sQ2e_2TL4IU6xugi2-7l_",
+      "type": "text",
+      "x": 477.28582763671875,
+      "y": 201.5909374359631,
+      "width": 462.1294250488281,
+      "height": 124.12341803278693,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1783162217,
+      "version": 249,
+      "versionNonce": 1860044295,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104333417,
+      "link": null,
+      "locked": false,
+      "text": "public class EventDetailDto : CreationAuditedEntityDto<Guid>\n    {\n        public string Title { get; set; }\n        public string Description { get; set; }\n        public bool IsFree { get; set; }\n        public DateTime StartTime { get; set; }\n        public List<EventAttendeeDto> Attendees { get; set; }\n    }",
+      "fontSize": 12.929522711748636,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 121.00000000000003,
+      "containerId": null,
+      "originalText": "public class EventDetailDto : CreationAuditedEntityDto<Guid>\n    {\n        public string Title { get; set; }\n        public string Description { get; set; }\n        public bool IsFree { get; set; }\n        public DateTime StartTime { get; set; }\n        public List<EventAttendeeDto> Attendees { get; set; }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "4kKDUiNfcj7SAI7kdbYsg",
+      "type": "text",
+      "x": 517.2857971191406,
+      "y": 355.6665718359375,
+      "width": 364.0802917480469,
+      "height": 89.47637250000001,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 105372585,
+      "version": 101,
+      "versionNonce": 1596712263,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104371400,
+      "link": null,
+      "locked": false,
+      "text": "public class EventAttendeeDto\n    {\n        public Guid UserId { get; set; }\n        public string UserName { get; set; }\n        public DateTime CreationTime { get; set; }\n    }",
+      "fontSize": 12.427273958333336,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 86.99999999999999,
+      "containerId": null,
+      "originalText": "public class EventAttendeeDto\n    {\n        public Guid UserId { get; set; }\n        public string UserName { get; set; }\n        public DateTime CreationTime { get; set; }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "q0DCq_PSD8aYZlAcubl_-",
+      "type": "text",
+      "x": 908.1433105468748,
+      "y": 111.53900513756741,
+      "width": 1010.2276000976562,
+      "height": 1619.1752282608704,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1285486247,
+      "version": 252,
+      "versionNonce": 1897441735,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104484031,
+      "link": null,
+      "locked": false,
+      "text": "public class EventAppService : EventOrganizerAppService, IEventAppService\n    {\n        private readonly IRepository<Event, Guid> _eventRepository;\n        private readonly IRepository<AppUser, Guid> _userRepository;\n\n        public EventAppService(IRepository<Event, Guid> eventRepository, IRepository<AppUser, Guid> userRepository)\n        {\n            _eventRepository = eventRepository;\n            _userRepository = userRepository;\n        }\n\n        [Authorize]\n        public async Task<Guid> CreateAsync(EventCreationDto input)\n        {\n            var eventEntity = ObjectMapper.Map<EventCreationDto, Event>(input);\n            await _eventRepository.InsertAsync(eventEntity);\n            return eventEntity.Id;\n        }\n\n        public async Task<List<EventDto>> GetUpcomingAsync()\n        {\n            var queryable = await _eventRepository.GetQueryableAsync();\n            var query = queryable\n                .Where(x => x.StartTime > Clock.Now)\n                .OrderBy(x => x.StartTime);\n            \n            var events = await AsyncExecuter.ToListAsync(query);\n\n            return ObjectMapper.Map<List<Event>, List<EventDto>>(events);\n        }\n\n        public async Task<EventDetailDto> GetAsync(Guid id)\n        {\n            var @event = await _eventRepository.GetAsync(id);\n            var attendeeIds = @event.Attendees.Select(a => a.UserId).ToList();\n\n            var queryable = await _userRepository.GetQueryableAsync();\n            var query = queryable\n                .Where(u => attendeeIds.Contains(u.Id));\n            \n            var attendees = (await AsyncExecuter.ToListAsync(query))\n                .ToDictionary(x => x.Id);\n\n            var result = ObjectMapper.Map<Event, EventDetailDto>(@event);\n\n            foreach (var attendeeDto in result.Attendees)\n            {\n                attendeeDto.UserName = attendees[attendeeDto.UserId].UserName;\n            }\n\n            return result;\n        }\n\n        [Authorize]\n        public async Task RegisterAsync(Guid id)\n        {\n            var @event = await _eventRepository.GetAsync(id);\n            if (@event.Attendees.Any(a => a.UserId == CurrentUser.Id))\n            {\n                return;\n            }\n\n            @event.Attendees.Add(new EventAttendee {UserId = CurrentUser.GetId(), CreationTime = Clock.Now});\n            await _eventRepository.UpdateAsync(@event);\n        }\n\n        [Authorize]\n        public async Task UnregisterAsync(Guid id)\n        {\n            var @event = await _eventRepository.GetAsync(id);\n            var removedItems = @event.Attendees.RemoveAll(x => x.UserId == CurrentUser.Id);\n            if (removedItems.Any())\n            {\n                await _eventRepository.UpdateAsync(@event);\n            }\n        }\n\n        [Authorize]\n        public async Task DeleteAsync(Guid id)\n        {\n            var @event = await _eventRepository.GetAsync(id);\n\n            if (CurrentUser.Id != @event.CreatorId)\n            {\n                throw new UserFriendlyException(\"You don't have the necessary permission to delete this event!\");\n            }\n\n            await _eventRepository.DeleteAsync(id);\n        }\n    }",
+      "fontSize": 14.992363224637689,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 1615,
+      "containerId": null,
+      "originalText": "public class EventAppService : EventOrganizerAppService, IEventAppService\n    {\n        private readonly IRepository<Event, Guid> _eventRepository;\n        private readonly IRepository<AppUser, Guid> _userRepository;\n\n        public EventAppService(IRepository<Event, Guid> eventRepository, IRepository<AppUser, Guid> userRepository)\n        {\n            _eventRepository = eventRepository;\n            _userRepository = userRepository;\n        }\n\n        [Authorize]\n        public async Task<Guid> CreateAsync(EventCreationDto input)\n        {\n            var eventEntity = ObjectMapper.Map<EventCreationDto, Event>(input);\n            await _eventRepository.InsertAsync(eventEntity);\n            return eventEntity.Id;\n        }\n\n        public async Task<List<EventDto>> GetUpcomingAsync()\n        {\n            var queryable = await _eventRepository.GetQueryableAsync();\n            var query = queryable\n                .Where(x => x.StartTime > Clock.Now)\n                .OrderBy(x => x.StartTime);\n            \n            var events = await AsyncExecuter.ToListAsync(query);\n\n            return ObjectMapper.Map<List<Event>, List<EventDto>>(events);\n        }\n\n        public async Task<EventDetailDto> GetAsync(Guid id)\n        {\n            var @event = await _eventRepository.GetAsync(id);\n            var attendeeIds = @event.Attendees.Select(a => a.UserId).ToList();\n\n            var queryable = await _userRepository.GetQueryableAsync();\n            var query = queryable\n                .Where(u => attendeeIds.Contains(u.Id));\n            \n            var attendees = (await AsyncExecuter.ToListAsync(query))\n                .ToDictionary(x => x.Id);\n\n            var result = ObjectMapper.Map<Event, EventDetailDto>(@event);\n\n            foreach (var attendeeDto in result.Attendees)\n            {\n                attendeeDto.UserName = attendees[attendeeDto.UserId].UserName;\n            }\n\n            return result;\n        }\n\n        [Authorize]\n        public async Task RegisterAsync(Guid id)\n        {\n            var @event = await _eventRepository.GetAsync(id);\n            if (@event.Attendees.Any(a => a.UserId == CurrentUser.Id))\n            {\n                return;\n            }\n\n            @event.Attendees.Add(new EventAttendee {UserId = CurrentUser.GetId(), CreationTime = Clock.Now});\n            await _eventRepository.UpdateAsync(@event);\n        }\n\n        [Authorize]\n        public async Task UnregisterAsync(Guid id)\n        {\n            var @event = await _eventRepository.GetAsync(id);\n            var removedItems = @event.Attendees.RemoveAll(x => x.UserId == CurrentUser.Id);\n            if (removedItems.Any())\n            {\n                await _eventRepository.UpdateAsync(@event);\n            }\n        }\n\n        [Authorize]\n        public async Task DeleteAsync(Guid id)\n        {\n            var @event = await _eventRepository.GetAsync(id);\n\n            if (CurrentUser.Id != @event.CreatorId)\n            {\n                throw new UserFriendlyException(\"You don't have the necessary permission to delete this event!\");\n            }\n\n            await _eventRepository.DeleteAsync(id);\n        }\n    }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "iq_w6EnK655xLypYd4V3C",
+      "type": "text",
+      "x": -20.142807006835838,
+      "y": 1398.1434326171873,
+      "width": 545.2799882207597,
+      "height": 137.1427001953125,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 894053033,
+      "version": 73,
+      "versionNonce": 153466343,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104761374,
+      "link": null,
+      "locked": false,
+      "text": "public EventOrganizerApplicationAutoMapperProfile()\n        {\n            CreateMap<EventCreationDto, Event>();\n            CreateMap<Event, EventDto>();\n            CreateMap<Event, EventDetailDto>();\n            CreateMap<EventAttendee, EventAttendeeDto>();\n        }",
+      "fontSize": 16.326511928013385,
+      "fontFamily": 3,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 133.00000000000006,
+      "containerId": null,
+      "originalText": "public EventOrganizerApplicationAutoMapperProfile()\n        {\n            CreateMap<EventCreationDto, Event>();\n            CreateMap<Event, EventDto>();\n            CreateMap<Event, EventDetailDto>();\n            CreateMap<EventAttendee, EventAttendeeDto>();\n        }",
+      "lineHeight": 1.2
+    },
+    {
+      "id": "bcPnUwIF7NNTRK0NGDUx_",
+      "type": "freedraw",
+      "x": 487.857177734375,
+      "y": 714.71435546875,
+      "width": 1089.1430301666257,
+      "height": 454.85736083984375,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "roundness": null,
+      "seed": 1026233545,
+      "version": 378,
+      "versionNonce": 92725063,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1735104804065,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -4.28564453125,
+          -3.428466796875
+        ],
+        [
+          -8.857177734375,
+          -6.857177734375
+        ],
+        [
+          -14.57135009765625,
+          -10.2857666015625
+        ],
+        [
+          -17.9998779296875,
+          -14.857177734375
+        ],
+        [
+          -21.428466796875,
+          -17.1427001953125
+        ],
+        [
+          -28.28570556640625,
+          -22.857177734375
+        ],
+        [
+          -33.9998779296875,
+          -26.2857666015625
+        ],
+        [
+          -37.428466796875,
+          -29.71435546875
+        ],
+        [
+          -39.7142333984375,
+          -30.857177734375
+        ],
+        [
+          -41.9998779296875,
+          -33.14276123046875
+        ],
+        [
+          -44.28570556640625,
+          -35.42852783203125
+        ],
+        [
+          -46.57135009765625,
+          -37.7142333984375
+        ],
+        [
+          -51.14288330078125,
+          -39.99993896484375
+        ],
+        [
+          -52.28570556640625,
+          -41.14276123046875
+        ],
+        [
+          -56.857177734375,
+          -42.2857666015625
+        ],
+        [
+          -62.57135009765625,
+          -44.57122802734375
+        ],
+        [
+          -64.857177734375,
+          -44.57122802734375
+        ],
+        [
+          -72.857177734375,
+          -45.7142333984375
+        ],
+        [
+          -78.57135009765625,
+          -45.7142333984375
+        ],
+        [
+          -87.71426391601562,
+          -47.99993896484375
+        ],
+        [
+          -92.28573608398438,
+          -47.99993896484375
+        ],
+        [
+          -97.9998779296875,
+          -47.99993896484375
+        ],
+        [
+          -105.9998779296875,
+          -47.99993896484375
+        ],
+        [
+          -109.42840576171875,
+          -47.99993896484375
+        ],
+        [
+          -113.9998779296875,
+          -47.99993896484375
+        ],
+        [
+          -117.42840576171875,
+          -47.99993896484375
+        ],
+        [
+          -121.9998779296875,
+          -47.99993896484375
+        ],
+        [
+          -124.28573608398438,
+          -47.99993896484375
+        ],
+        [
+          -127.71426391601562,
+          -47.99993896484375
+        ],
+        [
+          -132.28573608398438,
+          -49.14276123046875
+        ],
+        [
+          -134.5714111328125,
+          -49.14276123046875
+        ],
+        [
+          -139.14288330078125,
+          -49.14276123046875
+        ],
+        [
+          -148.28573608398438,
+          -52.57122802734375
+        ],
+        [
+          -153.9998779296875,
+          -53.7142333984375
+        ],
+        [
+          -158.5714111328125,
+          -53.7142333984375
+        ],
+        [
+          -168.85711669921875,
+          -54.857177734375
+        ],
+        [
+          -174.5714111328125,
+          -54.857177734375
+        ],
+        [
+          -182.5714111328125,
+          -55.99993896484375
+        ],
+        [
+          -196.28573608398438,
+          -59.42852783203125
+        ],
+        [
+          -206.5714111328125,
+          -60.57122802734375
+        ],
+        [
+          -216.85705566406244,
+          -60.57122802734375
+        ],
+        [
+          -227.1428833007812,
+          -62.857177734375
+        ],
+        [
+          -235.1428833007812,
+          -63.99993896484375
+        ],
+        [
+          -240.85705566406244,
+          -63.99993896484375
+        ],
+        [
+          -247.71426391601557,
+          -66.2857666015625
+        ],
+        [
+          -248.85705566406244,
+          -66.2857666015625
+        ],
+        [
+          -253.4285278320312,
+          -66.2857666015625
+        ],
+        [
+          -259.1428833007812,
+          -66.2857666015625
+        ],
+        [
+          -263.71426391601557,
+          -66.2857666015625
+        ],
+        [
+          -272.85705566406244,
+          -66.2857666015625
+        ],
+        [
+          -283.1428833007812,
+          -66.2857666015625
+        ],
+        [
+          -301.4285278320312,
+          -66.2857666015625
+        ],
+        [
+          -312.85708618164057,
+          -66.2857666015625
+        ],
+        [
+          -317.4285278320312,
+          -66.2857666015625
+        ],
+        [
+          -332.28567504882807,
+          -66.2857666015625
+        ],
+        [
+          -339.1428833007812,
+          -67.42852783203125
+        ],
+        [
+          -347.1428833007812,
+          -67.42852783203125
+        ],
+        [
+          -356.28567504882807,
+          -67.42852783203125
+        ],
+        [
+          -361.9999389648437,
+          -67.42852783203125
+        ],
+        [
+          -367.7142944335937,
+          -67.42852783203125
+        ],
+        [
+          -371.1428833007812,
+          -67.42852783203125
+        ],
+        [
+          -373.4285736083984,
+          -67.42852783203125
+        ],
+        [
+          -377.9999389648437,
+          -67.42852783203125
+        ],
+        [
+          -384.85710144042963,
+          -67.42852783203125
+        ],
+        [
+          -390.57136535644526,
+          -67.42852783203125
+        ],
+        [
+          -397.4286041259765,
+          -67.42852783203125
+        ],
+        [
+          -401.99993896484364,
+          -67.42852783203125
+        ],
+        [
+          -411.14288330078114,
+          -67.42852783203125
+        ],
+        [
+          -417.99993896484364,
+          -67.42852783203125
+        ],
+        [
+          -422.5713653564452,
+          -67.42852783203125
+        ],
+        [
+          -431.71429443359364,
+          -67.42852783203125
+        ],
+        [
+          -438.5713653564452,
+          -67.42852783203125
+        ],
+        [
+          -446.5713653564452,
+          -67.42852783203125
+        ],
+        [
+          -453.42860412597645,
+          -67.42852783203125
+        ],
+        [
+          -461.42860412597645,
+          -67.42852783203125
+        ],
+        [
+          -465.99996185302723,
+          -67.42852783203125
+        ],
+        [
+          -467.1428756713866,
+          -67.42852783203125
+        ],
+        [
+          -471.71431732177723,
+          -67.42852783203125
+        ],
+        [
+          -473.99996185302723,
+          -67.42852783203125
+        ],
+        [
+          -478.57138061523426,
+          -67.42852783203125
+        ],
+        [
+          -483.1428756713866,
+          -67.42852783203125
+        ],
+        [
+          -486.57138061523426,
+          -67.42852783203125
+        ],
+        [
+          -492.285675048828,
+          -67.42852783203125
+        ],
+        [
+          -499.14289093017567,
+          -67.42852783203125
+        ],
+        [
+          -503.71431732177723,
+          -67.42852783203125
+        ],
+        [
+          -509.42860412597645,
+          -67.42852783203125
+        ],
+        [
+          -512.8571777343749,
+          -67.42852783203125
+        ],
+        [
+          -516.285675048828,
+          -67.42852783203125
+        ],
+        [
+          -517.4286041259764,
+          -67.42852783203125
+        ],
+        [
+          -520.8571777343749,
+          -66.2857666015625
+        ],
+        [
+          -526.5713882446288,
+          -63.99993896484375
+        ],
+        [
+          -529.99995803833,
+          -61.7142333984375
+        ],
+        [
+          -532.2856712341307,
+          -59.42852783203125
+        ],
+        [
+          -535.71431350708,
+          -57.14276123046875
+        ],
+        [
+          -537.99995803833,
+          -54.857177734375
+        ],
+        [
+          -540.2856788635253,
+          -53.7142333984375
+        ],
+        [
+          -541.4286041259764,
+          -49.14276123046875
+        ],
+        [
+          -544.8571701049804,
+          -45.7142333984375
+        ],
+        [
+          -544.8571701049804,
+          -43.42852783203125
+        ],
+        [
+          -547.1428909301757,
+          -39.99993896484375
+        ],
+        [
+          -549.4286041259764,
+          -35.42852783203125
+        ],
+        [
+          -549.4286041259764,
+          -33.14276123046875
+        ],
+        [
+          -549.4286041259764,
+          -30.857177734375
+        ],
+        [
+          -550.5713920593261,
+          -24
+        ],
+        [
+          -552.8571777343749,
+          -20.5712890625
+        ],
+        [
+          -553.99995803833,
+          -17.1427001953125
+        ],
+        [
+          -555.1428909301757,
+          -11.428466796875
+        ],
+        [
+          -555.1428909301757,
+          -6.857177734375
+        ],
+        [
+          -556.2856788635253,
+          -1.1427001953125
+        ],
+        [
+          -559.71431350708,
+          3.4287109375
+        ],
+        [
+          -560.8571777343749,
+          6.8572998046875
+        ],
+        [
+          -561.9999618530272,
+          14.8572998046875
+        ],
+        [
+          -563.1428909301757,
+          20.571533203125
+        ],
+        [
+          -564.2856788635253,
+          25.142822265625
+        ],
+        [
+          -565.4286022186278,
+          30.8572998046875
+        ],
+        [
+          -566.5713901519774,
+          34.28564453125
+        ],
+        [
+          -566.5713901519774,
+          38.8572998046875
+        ],
+        [
+          -568.8571739196776,
+          45.7142333984375
+        ],
+        [
+          -569.9999618530272,
+          52.571533203125
+        ],
+        [
+          -572.2856788635253,
+          59.4287109375
+        ],
+        [
+          -574.5713901519774,
+          66.28564453125
+        ],
+        [
+          -574.5713901519774,
+          78.8572998046875
+        ],
+        [
+          -574.5713901519774,
+          89.142822265625
+        ],
+        [
+          -575.7143192291259,
+          100.571533203125
+        ],
+        [
+          -575.7143192291259,
+          108.571533203125
+        ],
+        [
+          -575.7143192291259,
+          113.142822265625
+        ],
+        [
+          -575.7143192291259,
+          123.4288330078125
+        ],
+        [
+          -575.7143192291259,
+          133.7142333984375
+        ],
+        [
+          -575.7143192291259,
+          146.2860107421875
+        ],
+        [
+          -575.7143192291259,
+          158.857421875
+        ],
+        [
+          -575.7143192291259,
+          165.7142333984375
+        ],
+        [
+          -575.7143192291259,
+          168
+        ],
+        [
+          -575.7143192291259,
+          180.5714111328125
+        ],
+        [
+          -575.7143192291259,
+          181.7142333984375
+        ],
+        [
+          -575.7143192291259,
+          184
+        ],
+        [
+          -575.7143192291259,
+          189.7142333984375
+        ],
+        [
+          -575.7143192291259,
+          198.857421875
+        ],
+        [
+          -575.7143192291259,
+          206.857421875
+        ],
+        [
+          -575.7143192291259,
+          218.2860107421875
+        ],
+        [
+          -575.7143192291259,
+          227.4288330078125
+        ],
+        [
+          -575.7143192291259,
+          232
+        ],
+        [
+          -575.7143192291259,
+          233.142822265625
+        ],
+        [
+          -575.7143192291259,
+          237.7142333984375
+        ],
+        [
+          -575.7143192291259,
+          246.857421875
+        ],
+        [
+          -575.7143192291259,
+          254.857421875
+        ],
+        [
+          -575.7143192291259,
+          267.4288330078125
+        ],
+        [
+          -573.4286060333251,
+          278.857421875
+        ],
+        [
+          -573.4286060333251,
+          283.4288330078125
+        ],
+        [
+          -573.4286060333251,
+          286.857421875
+        ],
+        [
+          -572.2856788635253,
+          293.7142333984375
+        ],
+        [
+          -571.1428909301757,
+          301.7142333984375
+        ],
+        [
+          -571.1428909301757,
+          307.4288330078125
+        ],
+        [
+          -568.8571739196776,
+          315.4288330078125
+        ],
+        [
+          -566.5713901519774,
+          322.2860107421875
+        ],
+        [
+          -564.2856788635253,
+          329.142822265625
+        ],
+        [
+          -561.9999618530272,
+          332.5714111328125
+        ],
+        [
+          -560.8571777343749,
+          340.5714111328125
+        ],
+        [
+          -557.4286041259764,
+          345.142822265625
+        ],
+        [
+          -552.8571777343749,
+          354.2860107421875
+        ],
+        [
+          -548.2856788635253,
+          358.857421875
+        ],
+        [
+          -545.99995803833,
+          361.142822265625
+        ],
+        [
+          -541.4286041259764,
+          364.5714111328125
+        ],
+        [
+          -535.71431350708,
+          366.857421875
+        ],
+        [
+          -526.5713882446288,
+          370.2860107421875
+        ],
+        [
+          -515.1428909301757,
+          374.857421875
+        ],
+        [
+          -499.14289093017567,
+          374.857421875
+        ],
+        [
+          -473.99996185302723,
+          378.2860107421875
+        ],
+        [
+          -444.285675048828,
+          380.5714111328125
+        ],
+        [
+          -400.85710144042963,
+          380.5714111328125
+        ],
+        [
+          -388.28567504882807,
+          380.5714111328125
+        ],
+        [
+          -359.7142944335937,
+          380.5714111328125
+        ],
+        [
+          -351.7142944335937,
+          380.5714111328125
+        ],
+        [
+          -344.85710144042963,
+          380.5714111328125
+        ],
+        [
+          -341.4285278320312,
+          380.5714111328125
+        ],
+        [
+          -339.1428833007812,
+          380.5714111328125
+        ],
+        [
+          -332.28567504882807,
+          380.5714111328125
+        ],
+        [
+          -319.71426391601557,
+          380.5714111328125
+        ],
+        [
+          -303.71426391601557,
+          380.5714111328125
+        ],
+        [
+          -285.4285278320312,
+          380.5714111328125
+        ],
+        [
+          -269.4285278320312,
+          380.5714111328125
+        ],
+        [
+          -238.57141113281244,
+          380.5714111328125
+        ],
+        [
+          -229.4285278320312,
+          380.5714111328125
+        ],
+        [
+          -199.71426391601562,
+          380.5714111328125
+        ],
+        [
+          -187.14288330078125,
+          380.5714111328125
+        ],
+        [
+          -171.14288330078125,
+          380.5714111328125
+        ],
+        [
+          -153.9998779296875,
+          380.5714111328125
+        ],
+        [
+          -137.9998779296875,
+          380.5714111328125
+        ],
+        [
+          -121.9998779296875,
+          380.5714111328125
+        ],
+        [
+          -104.85711669921875,
+          380.5714111328125
+        ],
+        [
+          -91.14288330078125,
+          380.5714111328125
+        ],
+        [
+          -73.9998779296875,
+          380.5714111328125
+        ],
+        [
+          -60.28570556640625,
+          382.857421875
+        ],
+        [
+          -40.857177734375,
+          382.857421875
+        ],
+        [
+          -15.7142333984375,
+          384
+        ],
+        [
+          10.571533203125,
+          384
+        ],
+        [
+          30.0001220703125,
+          384
+        ],
+        [
+          47.142822265625,
+          384
+        ],
+        [
+          63.142822265625,
+          384
+        ],
+        [
+          75.71435546875,
+          384
+        ],
+        [
+          86.0001220703125,
+          386.2860107421875
+        ],
+        [
+          100.85711669921875,
+          387.4288330078125
+        ],
+        [
+          120.28570556640625,
+          387.4288330078125
+        ],
+        [
+          138.5716552734375,
+          387.4288330078125
+        ],
+        [
+          153.4287109375,
+          387.4288330078125
+        ],
+        [
+          164.85711669921875,
+          387.4288330078125
+        ],
+        [
+          171.71435546875,
+          387.4288330078125
+        ],
+        [
+          178.5716552734374,
+          387.4288330078125
+        ],
+        [
+          187.7143554687499,
+          387.4288330078125
+        ],
+        [
+          196.85711669921864,
+          387.4288330078125
+        ],
+        [
+          210.5716552734374,
+          387.4288330078125
+        ],
+        [
+          224.28570556640614,
+          387.4288330078125
+        ],
+        [
+          238.0001220703124,
+          387.4288330078125
+        ],
+        [
+          250.5716552734374,
+          387.4288330078125
+        ],
+        [
+          265.4287109374999,
+          385.142822265625
+        ],
+        [
+          286.0001220703124,
+          385.142822265625
+        ],
+        [
+          290.5716552734374,
+          385.142822265625
+        ],
+        [
+          303.1429443359374,
+          385.142822265625
+        ],
+        [
+          319.1429443359374,
+          385.142822265625
+        ],
+        [
+          337.4287109374999,
+          385.142822265625
+        ],
+        [
+          347.7143554687499,
+          385.142822265625
+        ],
+        [
+          353.4287109374999,
+          381.7142333984375
+        ],
+        [
+          355.7143554687499,
+          381.7142333984375
+        ],
+        [
+          363.7143554687499,
+          381.7142333984375
+        ],
+        [
+          368.28570556640614,
+          380.5714111328125
+        ],
+        [
+          376.28570556640614,
+          378.2860107421875
+        ],
+        [
+          383.1429443359374,
+          373.7142333984375
+        ],
+        [
+          390.0001220703124,
+          370.2860107421875
+        ],
+        [
+          391.1429443359374,
+          370.2860107421875
+        ],
+        [
+          393.4287109374999,
+          368
+        ],
+        [
+          395.7143554687499,
+          366.857421875
+        ],
+        [
+          399.1429443359374,
+          363.4288330078125
+        ],
+        [
+          402.5716552734374,
+          360
+        ],
+        [
+          403.7143554687499,
+          358.857421875
+        ],
+        [
+          409.4287109374999,
+          353.142822265625
+        ],
+        [
+          412.85736083984364,
+          349.7142333984375
+        ],
+        [
+          414.0001220703124,
+          348.5714111328125
+        ],
+        [
+          416.28570556640614,
+          346.2860107421875
+        ],
+        [
+          419.7143554687499,
+          344
+        ],
+        [
+          420.85736083984364,
+          342.857421875
+        ],
+        [
+          422.0001220703124,
+          341.7142333984375
+        ],
+        [
+          424.28570556640614,
+          340.5714111328125
+        ],
+        [
+          425.4287109374999,
+          339.4288330078125
+        ],
+        [
+          426.5716552734374,
+          338.2860107421875
+        ],
+        [
+          427.7143554687499,
+          337.142822265625
+        ],
+        [
+          430.0001220703124,
+          334.857421875
+        ],
+        [
+          431.1428222656249,
+          333.7142333984375
+        ],
+        [
+          432.2857666015624,
+          332.5714111328125
+        ],
+        [
+          433.4287109374999,
+          330.2860107421875
+        ],
+        [
+          434.5715332031249,
+          325.7142333984375
+        ],
+        [
+          436.8574218749999,
+          324.5714111328125
+        ],
+        [
+          438.0001220703124,
+          323.4288330078125
+        ],
+        [
+          439.1428222656249,
+          321.142822265625
+        ],
+        [
+          440.2857666015624,
+          320
+        ],
+        [
+          442.5715332031249,
+          317.7142333984375
+        ],
+        [
+          443.7144775390624,
+          316.5714111328125
+        ],
+        [
+          446.0001220703124,
+          314.2860107421875
+        ],
+        [
+          449.4287109374999,
+          312
+        ],
+        [
+          450.5715332031249,
+          310.857421875
+        ],
+        [
+          455.1428222656249,
+          309.7142333984375
+        ],
+        [
+          456.2857666015624,
+          307.4288330078125
+        ],
+        [
+          457.4287109374999,
+          306.2860107421875
+        ],
+        [
+          463.1428222656249,
+          301.7142333984375
+        ],
+        [
+          464.2857666015624,
+          300.5714111328125
+        ],
+        [
+          467.7144775390624,
+          299.4288330078125
+        ],
+        [
+          471.1428222656249,
+          297.142822265625
+        ],
+        [
+          473.4287109374999,
+          294.857421875
+        ],
+        [
+          475.7144775390624,
+          293.7142333984375
+        ],
+        [
+          476.8574218749999,
+          292.5714111328125
+        ],
+        [
+          479.1428222656249,
+          291.4288330078125
+        ],
+        [
+          480.2857666015624,
+          290.2860107421875
+        ],
+        [
+          486.0001220703124,
+          285.7142333984375
+        ],
+        [
+          487.1428222656249,
+          284.5714111328125
+        ],
+        [
+          488.2857666015624,
+          283.4288330078125
+        ],
+        [
+          489.4287109374999,
+          281.142822265625
+        ],
+        [
+          491.7144775390624,
+          275.4288330078125
+        ],
+        [
+          492.8574218749999,
+          274.2860107421875
+        ],
+        [
+          494.0001220703124,
+          269.7142333984375
+        ],
+        [
+          496.2857666015624,
+          262.857421875
+        ],
+        [
+          499.7144775390624,
+          257.142822265625
+        ],
+        [
+          500.8574218749999,
+          253.7142333984375
+        ],
+        [
+          502.0001220703124,
+          250.2860107421875
+        ],
+        [
+          504.2857666015624,
+          244.5714111328125
+        ],
+        [
+          505.4287109374999,
+          243.4288330078125
+        ],
+        [
+          506.5715332031249,
+          240
+        ],
+        [
+          507.7144775390624,
+          234.2860107421875
+        ],
+        [
+          510.0001220703124,
+          225.142822265625
+        ],
+        [
+          510.0001220703124,
+          219.4288330078125
+        ],
+        [
+          511.1428222656249,
+          213.7142333984375
+        ],
+        [
+          511.1428222656249,
+          208
+        ],
+        [
+          513.4287109374999,
+          196.5714111328125
+        ],
+        [
+          513.4287109374999,
+          189.7142333984375
+        ],
+        [
+          513.4287109374999,
+          186.2860107421875
+        ],
+        [
+          513.4287109374999,
+          182.857421875
+        ],
+        [
+          513.4287109374999,
+          174.857421875
+        ],
+        [
+          513.4287109374999,
+          170.2860107421875
+        ],
+        [
+          513.4287109374999,
+          163.4288330078125
+        ],
+        [
+          513.4287109374999,
+          154.2860107421875
+        ],
+        [
+          513.4287109374999,
+          147.4288330078125
+        ],
+        [
+          513.4287109374999,
+          142.857421875
+        ],
+        [
+          511.1428222656249,
+          137.142822265625
+        ],
+        [
+          508.8574218749999,
+          130.2860107421875
+        ],
+        [
+          504.2857666015624,
+          124.5714111328125
+        ],
+        [
+          503.1428222656249,
+          120
+        ],
+        [
+          498.5715332031249,
+          113.142822265625
+        ],
+        [
+          496.2857666015624,
+          108.571533203125
+        ],
+        [
+          494.0001220703124,
+          102.8572998046875
+        ],
+        [
+          489.4287109374999,
+          97.142822265625
+        ],
+        [
+          484.8574218749999,
+          91.4287109375
+        ],
+        [
+          478.0001220703124,
+          80
+        ],
+        [
+          470.0001220703124,
+          70.8572998046875
+        ],
+        [
+          467.7144775390624,
+          68.571533203125
+        ],
+        [
+          464.2857666015624,
+          64
+        ],
+        [
+          459.7144775390624,
+          59.4287109375
+        ],
+        [
+          455.1428222656249,
+          56
+        ],
+        [
+          452.8574218749999,
+          54.8572998046875
+        ],
+        [
+          447.1428222656249,
+          52.571533203125
+        ],
+        [
+          444.8574218749999,
+          50.28564453125
+        ],
+        [
+          433.4287109374999,
+          48
+        ],
+        [
+          411.7143554687499,
+          41.142822265625
+        ],
+        [
+          385.4287109374999,
+          36.571533203125
+        ],
+        [
+          380.85736083984364,
+          36.571533203125
+        ],
+        [
+          358.0001220703124,
+          35.4287109375
+        ],
+        [
+          354.5716552734374,
+          35.4287109375
+        ],
+        [
+          344.28570556640614,
+          35.4287109375
+        ],
+        [
+          337.4287109374999,
+          35.4287109375
+        ],
+        [
+          330.5716552734374,
+          35.4287109375
+        ],
+        [
+          320.28570556640614,
+          35.4287109375
+        ],
+        [
+          316.85723876953114,
+          35.4287109375
+        ],
+        [
+          302.0001220703124,
+          35.4287109375
+        ],
+        [
+          291.7143554687499,
+          35.4287109375
+        ],
+        [
+          280.28570556640614,
+          35.4287109375
+        ],
+        [
+          271.1429443359374,
+          35.4287109375
+        ],
+        [
+          264.28570556640614,
+          35.4287109375
+        ],
+        [
+          256.28570556640614,
+          35.4287109375
+        ],
+        [
+          248.28570556640614,
+          35.4287109375
+        ],
+        [
+          233.4287109374999,
+          35.4287109375
+        ],
+        [
+          226.5716552734374,
+          33.142822265625
+        ],
+        [
+          219.7143554687499,
+          33.142822265625
+        ],
+        [
+          212.85711669921864,
+          32
+        ],
+        [
+          204.85711669921864,
+          28.571533203125
+        ],
+        [
+          200.28570556640614,
+          28.571533203125
+        ],
+        [
+          193.4287109374999,
+          28.571533203125
+        ],
+        [
+          186.5716552734374,
+          28.571533203125
+        ],
+        [
+          175.1429443359374,
+          26.28564453125
+        ],
+        [
+          155.71435546875,
+          26.28564453125
+        ],
+        [
+          132.85711669921875,
+          24
+        ],
+        [
+          107.71435546875,
+          18.28564453125
+        ],
+        [
+          89.4287109375,
+          18.28564453125
+        ],
+        [
+          72.28570556640625,
+          18.28564453125
+        ],
+        [
+          65.4287109375,
+          18.28564453125
+        ],
+        [
+          58.571533203125,
+          17.142822265625
+        ],
+        [
+          55.142822265625,
+          17.142822265625
+        ],
+        [
+          52.85711669921875,
+          17.142822265625
+        ],
+        [
+          49.4287109375,
+          17.142822265625
+        ],
+        [
+          48.28570556640625,
+          17.142822265625
+        ],
+        [
+          46.0001220703125,
+          17.142822265625
+        ],
+        [
+          43.71435546875,
+          17.142822265625
+        ],
+        [
+          42.571533203125,
+          17.142822265625
+        ],
+        [
+          40.28570556640625,
+          17.142822265625
+        ],
+        [
+          36.85711669921875,
+          17.142822265625
+        ],
+        [
+          27.71435546875,
+          16
+        ],
+        [
+          23.142822265625,
+          16
+        ],
+        [
+          18.571533203125,
+          12.571533203125
+        ],
+        [
+          17.4287109375,
+          12.571533203125
+        ],
+        [
+          15.142822265625,
+          11.4287109375
+        ],
+        [
+          11.71435546875,
+          10.28564453125
+        ],
+        [
+          10.571533203125,
+          9.142822265625
+        ],
+        [
+          9.4287109375,
+          9.142822265625
+        ],
+        [
+          7.142822265625,
+          8
+        ],
+        [
+          6.0001220703125,
+          6.8572998046875
+        ],
+        [
+          3.71435546875,
+          5.7142333984375
+        ],
+        [
+          2.571533203125,
+          4.571533203125
+        ],
+        [
+          1.4287109375,
+          3.4287109375
+        ],
+        [
+          0.28570556640625,
+          3.4287109375
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "pressures": [],
+      "simulatePressure": true,
+      "lastCommittedPoint": [
+        0.28570556640625,
+        3.4287109375
+      ]
+    }
+  ],
+  "appState": {
+    "gridSize": null,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
